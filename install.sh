@@ -26,4 +26,7 @@ source \$ZSH_CONFIG_DIR/zshrc.sh
 EOF
 echo "Created .zshrc sourcing zshconfig"
 
+# ─── Git Configuration ───────────────────────────────────────────────────
+"$ZSH_CONFIG_DIR/scripts/gitconfig.sh"
+
 echo "Custom Dotfiles Installation Completed"
