@@ -17,14 +17,12 @@ rm -rf "$HOME/.claude"
 gh repo clone WadeSeidule/.claude "$HOME/.claude"
 
 # ─── Zsh Configuration ──────────────────────────────────────────────────────
-# Set up .zshrc to source zshconfig the same way setup.sh does
 export ZSH_CONFIG_DIR="$HOME/.zshconfig"
-cat > "$HOME/.zshrc" <<EOF
-export ZSH_CONFIG_DIR=$HOME/.zshconfig
-export PATH=\$ZSH_CONFIG_DIR:\$PATH
-source \$ZSH_CONFIG_DIR/zshrc.sh
-EOF
-echo "Created .zshrc sourcing zshconfig"
+export PATH="$ZSH_CONFIG_DIR:$PATH"
+zc setup
+
+# ─── Activate Nextdoor Work Config ───────────────────────────────────────────
+zc workconfig activate nextdoor
 
 # ─── Git Configuration ───────────────────────────────────────────────────
 "$ZSH_CONFIG_DIR/scripts/gitconfig.sh"
