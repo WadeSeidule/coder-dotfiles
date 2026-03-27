@@ -3,6 +3,10 @@ set -ue
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+# ─── Trust GitHub SSH Host Key ───────────────────────────────────────────────
+mkdir -p "$HOME/.ssh"
+ssh-keyscan -t ed25519 github.com >> "$HOME/.ssh/known_hosts" 2>/dev/null
+
 # ─── Clone Personal Repos ───────────────────────────────────────────────────
 echo "Cloning personal config repos..."
 
