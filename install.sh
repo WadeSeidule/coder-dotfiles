@@ -10,14 +10,14 @@ if [ -d "$HOME/.zshconfig" ]; then
   echo "zshconfig already exists, pulling latest..."
   git -C "$HOME/.zshconfig" pull
 else
-  git clone git@github.com:WadeSeidule/zshconfig.git "$HOME/.zshconfig"
+  gh repo clone WadeSeidule/zshconfig "$HOME/.zshconfig"
 fi
 
 if [ -d "$HOME/.claude" ]; then
   echo ".claude already exists, pulling latest..."
   git -C "$HOME/.claude" pull
 else
-  git clone git@github.com:WadeSeidule/.claude.git "$HOME/.claude"
+  gh repo clone WadeSeidule/.claude "$HOME/.claude"
 fi
 
 # ─── Zsh Configuration ──────────────────────────────────────────────────────
