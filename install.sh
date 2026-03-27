@@ -10,19 +10,11 @@ ssh-keyscan -t ed25519 github.com >> "$HOME/.ssh/known_hosts" 2>/dev/null
 # ─── Clone Personal Repos ───────────────────────────────────────────────────
 echo "Cloning personal config repos..."
 
-if [ -d "$HOME/.zshconfig" ]; then
-  echo "zshconfig already exists, pulling latest..."
-  git -C "$HOME/.zshconfig" pull
-else
-  gh repo clone WadeSeidule/zshconfig "$HOME/.zshconfig"
-fi
+rm -rf "$HOME/.zshconfig"
+gh repo clone WadeSeidule/zshconfig "$HOME/.zshconfig"
 
-if [ -d "$HOME/.claude" ]; then
-  echo ".claude already exists, pulling latest..."
-  git -C "$HOME/.claude" pull
-else
-  gh repo clone WadeSeidule/.claude "$HOME/.claude"
-fi
+rm -rf "$HOME/.claude"
+gh repo clone WadeSeidule/.claude "$HOME/.claude"
 
 # ─── Zsh Configuration ──────────────────────────────────────────────────────
 # Set up .zshrc to source zshconfig the same way setup.sh does
