@@ -11,10 +11,10 @@ ssh-keyscan -t ed25519 github.com >> "$HOME/.ssh/known_hosts" 2>/dev/null
 echo "Cloning personal config repos..."
 
 rm -rf "$HOME/.zshconfig"
-gh repo clone WadeSeidule/zshconfig "$HOME/.zshconfig"
+git clone git@github.com:WadeSeidule/zshconfig.git "$HOME/.zshconfig"
 
 rm -rf "$HOME/.claude"
-gh repo clone WadeSeidule/.claude "$HOME/.claude"
+git clone git@github.com:WadeSeidule/.claude.git "$HOME/.claude"
 
 # ─── Zsh Configuration ──────────────────────────────────────────────────────
 export ZSH_CONFIG_DIR="$HOME/.zshconfig"
