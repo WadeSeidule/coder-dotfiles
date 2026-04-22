@@ -28,3 +28,4 @@ zc workconfig activate nextdoor
 "$ZSH_CONFIG_DIR/scripts/gitconfig.sh"
 
 echo "Custom Dotfiles Installation Completed"
+exec zsh
